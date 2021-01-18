@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stdlib.h>
+#include<algorithm>
 using namespace std;
 namespace Rajesh
 {
@@ -202,8 +203,11 @@ namespace Rimal
 	}
 }
 
-
-
+template <typename U, size_t N>
+void sortarray(U(&data)[N])
+{
+	sort(data, data + N);
+}
 
 
 template <typename V, typename A, typename B, typename C, typename D, typename E, typename F, size_t N >
@@ -232,6 +236,7 @@ int main()
 		Rajesh_array[5].setImgReal(1, 1);
 		Rajesh_array[6].setImgReal(1, 0);
 		Rajesh_array[7].setImgReal(1, 4);
+		sortarray(Rajesh_array);
 
 	for (int j = 0; j < 8; j=j+2)
 	{
@@ -249,6 +254,7 @@ int main()
 	{
 		Rimal_array[i].setImgReal(Rajesh_array[i].getreal(), Rajesh_array[i].getimg());
 	}
+	sortarray(Rimal_array);
 		for (int j = 0; j < 8; j=j + 2)
 		{
 			a[j] = (Rimal_array[j] == Rimal_array[j + 1]);
